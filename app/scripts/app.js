@@ -6,16 +6,51 @@
  *
  * Main module of the application.
  */
-var tooglesApp = angular.module('tooglesApp', ['ngAnimate', 'ngAria', 'ngCookies', 'ngMessages', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch'])
-  .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/browse', { templateUrl: 'views/list.html', controller: 'ListCtrl' });
-    $routeProvider.when('/browse/:category', { templateUrl: 'views/list.html', controller: 'ListCtrl' });
-    $routeProvider.when('/search/:query', { templateUrl: 'views/list.html', controller: 'ListCtrl' });
-    $routeProvider.when('/view/:id', { templateUrl: 'views/view.html', controller: 'ViewCtrl' });
-    $routeProvider.when('/view/:id/:starttime', { templateUrl: 'views/view.html', controller: 'ViewCtrl' });
-    $routeProvider.when('/playlist/:id', { templateUrl: 'views/view.html', controller: 'ViewCtrl' });
-    $routeProvider.when('/playlist/:id/:start', { templateUrl: 'views/view.html', controller: 'ViewCtrl' });
-    $routeProvider.when('/user/:username', { templateUrl: 'views/list.html', controller: 'ListCtrl' });
-    $routeProvider.when('/user/:username/:feed', { templateUrl: 'views/list.html', controller: 'ListCtrl' });
-    $routeProvider.otherwise({ redirectTo: '/browse' });
-  }]);
+var clockApp = angular.module('clockApp', ['ui.router']);
+
+clockApp.run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state,   $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+}]);
+
+clockApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/clock');
+
+    $stateProvider.state('clock', {
+        url: '/clock',
+        views: {
+            main: {
+                templateUrl: 'views/clock.html',
+                controller: 'ClockCtrl'
+            }
+        }
+    });
+    $stateProvider.state('world-clock', {
+        url: '/world-clock',
+        views: {
+            main: {
+                templateUrl: 'views/world-clock.html',
+                controller: 'WorldClockCtrl'
+            }
+        }
+    });
+    $stateProvider.state('alarm-clock', {
+        url: '/alarm-clock',
+        views: {
+            main: {
+                templateUrl: 'views/alarm-clock.html',
+                controller: 'AlarmClockCtrl'
+            }
+        }
+    });
+    $stateProvider.state('countdown-timer', {
+        url: '/countdown-timer',
+        views: {
+            main: {
+                templateUrl: 'views/countdown-timer.html',
+                controller: 'CountdownTimerCtrl'
+            }
+        }
+    });
+
+}]);
