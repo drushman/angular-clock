@@ -1,3 +1,6 @@
+Angular Clock [![Build Status](https://travis-ci.org/tienvx/angular-clock.svg?branch=master)](https://travis-ci.org/tienvx/angular-clock)
+=========
+
 Angular clock: An AngularJS demo application
 ====================================
 
