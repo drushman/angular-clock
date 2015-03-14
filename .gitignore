@@ -1,9 +1,2 @@
-temp/*
-.idea/*
-dist/*
-node_modules
-bower_components
-.tmp/*
-.tmp/
-.sass-cache/*
+app/libraries/
 nbproject/
