@@ -5,4 +5,5 @@ before_script:
   - 'npm install -g bower karma-cli'
   - 'bower install'
   - 'npm install'
+  - 'cd test'
 script: karma start
