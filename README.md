@@ -8,12 +8,18 @@ Angular clock is built on top of Angular.js (with jQuery) and Bootstrap.
 
 ### Contributing
 
-Toogles is a single page JS app with no back end, so it's incredibly easy
-to set up locally. 
+Clone and install dependencies:
 
     git clone <your-fork-url>
     cd <your-fork-directory>
     bower install
+    npm install
+
+Run tests:
+
+    cd test
+    karma start
+    karma run
 
 ### Contributors
 

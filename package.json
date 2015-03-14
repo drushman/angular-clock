@@ -1,0 +1,22 @@
+{
+  "name": "angular-clock",
+  "version": "0.0.1",
+  "description": "Display clocks",
+  "devDependencies": {
+    "karma-jasmine": "~0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tienvx/angular-clock.git"
+  },
+  "author": "tien.xuan.vo@gmail.com",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  }
+}
+
